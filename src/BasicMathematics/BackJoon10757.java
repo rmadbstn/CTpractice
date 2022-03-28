@@ -3,16 +3,21 @@ package BasicMathematics;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class BackJoon10757 {
+public class BackJoon10757 {        //프로그램은 돌아가나 백준에서 통과하지못함 런타임에러
+
 
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 
-		String a = br.readLine();
-		String b = br.readLine();
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		
+		
+		String a = st.nextToken();
+		String b = st.nextToken();
 
 		int i = 1;
 
@@ -76,6 +81,8 @@ public class BackJoon10757 {
 		System.out.println(sb.reverse());
 
 		// sb.append(a);
+		
+		br.close();
 
 	}
 
