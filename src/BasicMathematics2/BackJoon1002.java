@@ -11,6 +11,8 @@ public class BackJoon1002 {
 		int result = 0;
 		int[] arr = new int[6];
 		
+		int r1 , r2; 
+		
 		Scanner sc = new Scanner(System.in);
 	
 		testCase = sc.nextInt(); 				//arr[0] x1 ,y1,r1, x2, y2 ,r2
@@ -20,25 +22,28 @@ public class BackJoon1002 {
 			for(int j=0; j<6;j++) {          	 //무한대, 2개, 1개, 0개일경우(3가지경우).
 				arr[j]=sc.nextInt();
 			}
-			if(arr[0]==arr[3]&&arr[1]==arr[4]) {  //좌표가 같을 때
+			
+			if(arr[2]==arr[4]) { // 반지름의 길이가 같을때
+				r1 = arr[2];
+				r2 = arr[5];
+			}else {                  //r1은 큰원의 반지름, r2는 작은 원의 반지름
+				r1 = Math.max(arr[2],arr[5]);
+				r2 = Math.min(arr[2],arr[5]);
 				
-				if(arr[2]==arr[5]) { // 원이 똑같은 두개 일 때
-					result = -1;	
-				}else {
-					result = 0;
-				}
-			}else if(distance(arr[0],arr[3],arr[1],arr[4])<distance2(arr[2],arr[5])) {
-				if(distance(arr[0],arr[3],arr[1],arr[4])+Math.min(arr[4], arr[5])==Math.max(arr[4], arr[5])) {//내접할 때
-					result = 1 ;
-				}else if(distance(arr[0],arr[3],arr[1],arr[4])+Math.min(arr[4], arr[5])<Math.max(arr[4], arr[5])) {
-					result = 0;  // 한 원이 다른 원 안에 있을 때
-				}
-				result = 2;
-			}else if(distance(arr[0],arr[3],arr[1],arr[4])>distance2(arr[2],arr[5])) {
-				result = 0;
-			}else {
-				result = 1;  
 			}
+			
+			if(r1==r2&&arr[0]==arr[3]&&arr[1]==arr[4]) {    //원의 좌표와 반지름이 일치할때.
+				result = -1;
+			}else if((r1-r2)*(r1-r2)<distance(arr[0],arr[3],arr[1],arr[4])&&distance(arr[0],arr[3],arr[1],arr[4])<(r1+r2)*(r1+r2)) {  //두 점에서 원이 접할 때
+				result = 2;
+			}else if((r1-r2)*(r1-r2)==distance(arr[0],arr[3],arr[1],arr[4])||distance(arr[0],arr[3],arr[1],arr[4])==(r1+r2)*(r1+r2)) {  //한 점에서 원이 접할때(내접,외접)
+				result = 1;
+			}else {
+				result = 0;   //그 외에 접하지 않을 때.
+			}
+			
+			
+
 			System.out.println(result);
 		}
 		
@@ -52,10 +57,5 @@ public class BackJoon1002 {
 		
 	}
 	
-	static int distance2(int r1, int r2){
-		
-		return (r1+r2)*(r1+r2);
-		
-	}
 
 }
