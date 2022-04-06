@@ -33,7 +33,7 @@ public class BackJoon11729 {
 		else {
 			
 			
-			hanoiWay(n-1,from,to,temp);         //temp ->to  to ->temp
+			hanoiWay(n-1,from,to,temp);         //temp ->to  to ->temp    
 			bw.write(from+" "+to+"\n");
 			hanoiWay(n-1,temp,from,to);			//temp ->from from->temp       
 		}
