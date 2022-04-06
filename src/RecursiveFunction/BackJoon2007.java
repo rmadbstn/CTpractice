@@ -32,7 +32,7 @@ public class BackJoon2007 {
 			bw.write(" ");
 		}else {
 			if(n/3==0) {                      //x y좌표가 1~3사이인지 9~18사이인지 27~81사이인지 재귀를 통해 빈칸을 넣는 법.
-				System.out.print("*");
+				bw.write("*");
 			}else {
 				star(x,y,n/3);
 			}
