@@ -34,35 +34,14 @@ public class BackJoon2007 {
 			if(n/3==0) {                      //x y좌표가 1~3사이인지 9~18사이인지 27~81사이인지 재귀를 통해 빈칸을 넣는 법.
 				bw.write("*");
 			}else {
-				star(x,y,n/3);
+				star(x,y,n/3);            //계속 3으로 찢어가며 공백을 넣음. 
 			}
 		}
 		
 		
 		
 		
-//		if(n==3) {
-//			bw.write("***\n* *\n***");
-//		}
-//		else{
-//			for(int i=0; i<3 ;i++) {
-//			squareStars(n/3);
-//			}
-//			bw.write("\n");
-//			squareStars(n/3);
-//			for(int i=0; i<n ; i++) {
-//				bw.write(" ");
-//			}
-//			for(int i=0; i<n ; i++) {
-//				bw.write("\n");
-//			}
-//			
-//			squareStars(n/3);
-//			bw.write("\n");
-//			for(int i=0; i<3 ;i++) {
-//				squareStars(n/3);
-//				}
-//		}
+
 	}
 
 }
