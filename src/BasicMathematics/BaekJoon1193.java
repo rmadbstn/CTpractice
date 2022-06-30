@@ -5,7 +5,7 @@ package BasicMathematics;
 
 import java.util.Scanner;
 
-public class FindingFraction {
+public class BaekJoon1193 {
 	
 
 	

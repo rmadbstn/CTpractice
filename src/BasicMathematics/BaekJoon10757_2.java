@@ -4,7 +4,7 @@ package BasicMathematics;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class BackJoon10757_2 {
+public class BaekJoon10757_2 {
 
 	public static void main(String[] args)  {
 		// TODO Auto-generated method stub

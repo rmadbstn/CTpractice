@@ -4,7 +4,7 @@ package BasicMathematics;
 
 import java.util.Scanner;
 
-public class HoneyComb {
+public class BaekJoon2292 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

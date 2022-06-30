@@ -2,7 +2,7 @@ package BasicMathematics2;
 
 import java.util.Scanner;
 
-public class BackJoon1085 {
+public class BaekJoon1085 {
 
 	public static void main(String[] args) {
 

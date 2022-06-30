@@ -3,7 +3,7 @@ package BasicMathematics2;
 import java.util.Scanner;
 
 //소수 찾기
-public class BackJoon1978 {
+public class BaekJoon1978 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

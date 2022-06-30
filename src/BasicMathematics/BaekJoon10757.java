@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BackJoon10757 {        //프로그램은 돌아가나 백준에서 통과하지못함 런타임에러
+public class BaekJoon10757 {        //프로그램은 돌아가나 백준에서 통과하지못함 런타임에러
 
 
 	public static void main(String[] args) throws IOException {

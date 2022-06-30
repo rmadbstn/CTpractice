@@ -3,7 +3,7 @@ package BasicMathematics2;
 import java.util.Scanner;
 
 //≈Õ∑ø
-public class BackJoon1002 {
+public class BaekJoon1002 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
