@@ -23,7 +23,7 @@ public class BaekJoon18870 {
 		}
 		
 		
-		
+		System.out.println("text");
 		
 		
 	}
