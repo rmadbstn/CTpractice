@@ -1,36 +1,39 @@
 package BruteForce;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class BaekJoon1436 {
                            
-	public static void main (String[] args) {{
-		Scanner sc = new Scanner(System.in);
+	public static void main (String[] args) throws IOException {
 		
-		int N = sc.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		int upNumber=0;
+		int N= Integer.parseInt(br.readLine());
 		
+		String str = "";
+		int upNumber=666;
 		
-		while(true) {
-			upNumber++;
-			String stringNumber = String.valueOf(upNumber);
-			if(stringNumber.contains("666")) {
-				
-				N--;
+		int count=0;
+		
+		while(count!=N) {
+			
+			 str = Integer.toString(upNumber);
+			if(str.contains("666")) {
+				count++;
 			}
-			
-			if(N>10000)
-				break;
-			
-			
+		upNumber++;
 			
 			
 		}
 		
 		
-		
-		
+		bw.write(Integer.parseInt(str)+"\n");
+		bw.flush();
 		
 		
 		
