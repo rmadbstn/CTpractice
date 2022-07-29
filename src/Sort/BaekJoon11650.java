@@ -1,38 +1,43 @@
 package Sort;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class BaekJoon11650 {
 
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-			HashMap<Integer,Integer> xyMap = new HashMap<Integer,Integer>();
 			int N = Integer.parseInt(br.readLine());
+			int[][] arr = new int[N][2];
 			
-			int[] xArr= new int[N];
-			int[] yArr= new int[N];
-			
-			int[] resultXArr = new int[N]; 
-			int[] resultYArr = new int[N]; 
-			
-			for(int i=0; i<N;i++) {
+			for(int i=0;i<N;i++) {
 				String[] strArr = br.readLine().split(" ");
-				xArr[i] = Integer.parseInt(strArr[0]);
-				yArr[i] = Integer.parseInt(strArr[1]);				
+				arr[i][0] = Integer.parseInt(strArr[0]);
+				arr[i][1] = Integer.parseInt(strArr[1]);				
 				
-				xyMap.put(yArr[1], xArr[0]);
 			}
 			
+	Arrays.sort(arr,new Comparator<int[]>() {
+		
+		@Override
+		public int compare(int[] a1,int[] a2) {
+			if(a1[0]==a2[0]) {
+				return Integer.compare(a1[1], a2[1]);
 			
-			
-			
+		}else {
+			return Integer.compare(a1[0], a2[0]);
+		}
+		
+		
+		}
+	});		
+		for(int i=0;i<N;i++) {
+			System.out.println(arr[i][0]+" "+arr[i][1]);
+		}
 	}
 
 }
