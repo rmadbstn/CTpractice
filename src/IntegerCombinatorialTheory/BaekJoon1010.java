@@ -12,6 +12,10 @@ public class BaekJoon1010 {
 		for(int i=0;i<N;i++) {
 			arr[i][0] = sc.nextInt();		//r
 			arr[i][1] = sc.nextInt();     //n      ->nCr
+			
+			if(arr[i][0]>15) {
+				arr[i][0]=arr[i][1]-arr[i][0];
+			}
 		}
 		
 		for(int j=0;j<N;j++) {
