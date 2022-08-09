@@ -44,14 +44,14 @@ public class BaekJoon1021 {
 					count++;
 
 				}
-				System.out.println(count);
+				System.out.println("left:"+count);
 				deque.removeFirst();
 				start++;
 				index++;
 
 			} else {
 
-				while (deque.peekLast() != x) {
+				while (deque.peekFirst() != x) {
 
 					deque.addFirst(deque.removeLast());
 					end--;
@@ -59,13 +59,13 @@ public class BaekJoon1021 {
 					count++;
 
 				}
-				deque.removeLast();
-				end--;
+				deque.removeFirst();
+				start++;
 				index++;
-
+				System.out.println("right:" +count);
 			}
 			
-			System.out.println("index: "+index);
+//			System.out.println("index: "+index);
 
 			if(index == m) {
 				break;
