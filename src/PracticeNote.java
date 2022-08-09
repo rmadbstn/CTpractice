@@ -8,24 +8,12 @@ public class PracticeNote {
 
 	public static void main(String[] args) throws IOException {
 
-		int[][] arr = { { 3, 5 }, { 1, 2 } ,{1,1}};
+		StringBuilder sb = new StringBuilder();
 		
+		sb.append(3);
 		
-		
+		System.out.println(sb);
 
-		Arrays.sort(arr, new Comparator<int[]>() {
-
-			@Override
-			public int compare(int[] a1, int[] a2) {
-				if (a1[0] == a2[0]) {
-					return Integer.compare(a1[1], a2[1]);
-				} else {
-					return Integer.compare(a1[0], a2[0]);
-				}
-			}
-		});
-
-		System.out.println(arr[0][1]);
 	}
 
 }
