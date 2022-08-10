@@ -19,60 +19,40 @@ public class BaekJoon1021 {
 		int m = Integer.parseInt(strArr[1]);
 
 		String[] strArr2 = br.readLine().split(" ");
-		
-		
-		for (int i = 1; i < n+1; i++) {
+
+		for (int i = 1; i < n + 1; i++) {
 			deque.addLast(i);
 		}
 
-		int start = 1;
-		int end = n;
 
-		int count = 0;
+		int sum = 0;
+		int count ;
 		int index = 0;
 		while (true) {
 
 			int x = Integer.parseInt(strArr2[index]); // 위치좌표.
+			count=0;
+			while (deque.peekFirst() != x) {       //x가 나올때까지 뽑음.
 
-			if (x - start <= end - x) {
-
-				while (deque.peekFirst() != x) {
-
-					deque.addLast(deque.removeFirst());
-					end++;
-					start++;
-					count++;
-
-				}
-				System.out.println("left:"+count);
-				deque.removeFirst();
-				start++;
-				index++;
-
-			} else {
-
-				while (deque.peekFirst() != x) {
-
-					deque.addFirst(deque.removeLast());
-					end--;
-					start--;
-					count++;
-
-				}
-				deque.removeFirst();
-				start++;
-				index++;
-				System.out.println("right:" +count);
+				deque.addLast(deque.removeFirst());
+				count++;
+				
 			}
-			
+			deque.poll();
+			if(deque.size()-(count-1)>count) {
+				sum+=count;
+			}else {
+				sum+=deque.size()-(count-1);
+			}
+			index++;
 //			System.out.println("index: "+index);
 
-			if(index == m) {
+			if (index == m) {
 				break;
 			}
-			
+
 		}
-		System.out.println(count);
+		System.out.println(sum);
 	}
 
 }
