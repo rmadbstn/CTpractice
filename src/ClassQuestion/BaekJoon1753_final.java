@@ -8,10 +8,38 @@ import java.io.OutputStreamWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BaekJoon1753{
-	static int[][] wArr;
-	static int[] dpArr;
 
+class Node implements Comparable<Node>{
+	
+	int end,weight;
+	
+	public Node(int end,int weight) {
+		
+		this.end = end;
+		this.weight = weight;
+	}
+
+	@Override
+	public int compareTo(Node o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
+public class BaekJoon1753_final{
+	
+	
 	public static void bfs(int K, LinkedList<Integer>[] list) {
 
 		Queue<Integer> queue = new LinkedList<>();
