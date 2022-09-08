@@ -31,7 +31,7 @@ public class BaekJoon2920 {
 
 			for (int i = 1; i < 8; i++) {
 
-				if (Integer.parseInt(strArr[i]) != 8-i ) {
+				if (Integer.parseInt(strArr[i]) != 8 - i) {
 
 					System.out.println("mixed");
 					break;
@@ -44,6 +44,7 @@ public class BaekJoon2920 {
 
 		} else {
 
+			System.out.println("mixed");
 		}
 
 	}
