@@ -1,18 +1,19 @@
 package ComulativeSum;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class BaekJoon16139_2 {
 
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
+		
+		StringBuilder sb = new StringBuilder();
+		
+		
 		String str = br.readLine();
 
 		int n = Integer.parseInt(br.readLine());
@@ -28,8 +29,13 @@ public class BaekJoon16139_2 {
 				continue;
 			}
 			
-			culArr[i] = culArr[i-1].clone();   //배열 복사시에 주소값이 아니라 배열 값만 복사.
+			for(int j=0;j<26;j++) {
 			
+			
+			culArr[i][j] = culArr[i-1][j];   //배열 복사시에 주소값이 아니라 배열 값만 복사.
+			
+			
+			}
 			culArr[i][alpha] = culArr[i-1][alpha]+1;
 			
 
@@ -37,25 +43,23 @@ public class BaekJoon16139_2 {
 
 		for (int i = 0; i < n; i++) {
 
-			String[] strArr = br.readLine().split(" ");
+			StringTokenizer st = new StringTokenizer(br.readLine());
 
-			int check = strArr[0].charAt(0)-97;
+			int check = st.nextToken().charAt(0)-97;
 
-			int a = Integer.parseInt(strArr[1]);
-			int b = Integer.parseInt(strArr[2]);
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
 
 			if (a == 0) {
-				bw.write(culArr[b][check] + "\n");
+				sb.append(culArr[b][check] + "\n");
 				continue;
 			}
 
-			bw.write(culArr[b][check] - culArr[a-1][check] + "\n");
+			sb.append(culArr[b][check] - culArr[a-1][check] + "\n");
 
 		}
-
 		
-		bw.flush();
-		bw.close();
+		System.out.println(sb);
 	}
 
 }
