@@ -20,7 +20,8 @@ public class BaekJoon15684 {
 		for(int i=0;i<M;i++) {
 			
 			
-			
+		  // 함수 들어갈 자리.
+		
 			
 			
 			
