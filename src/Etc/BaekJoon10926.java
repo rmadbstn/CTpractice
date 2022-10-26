@@ -12,6 +12,13 @@ public class BaekJoon10926 {
 		
 		String Name = br.readLine();
 		
+		
+		for(int i=0;i<10;i++) {
+		
+			System.out.println(i);
+			
+		}
+		
 		System.out.println(Name+"??!");
 		
 		
