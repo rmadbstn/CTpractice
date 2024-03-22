@@ -1,11 +1,12 @@
+package Programmerslv2;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class PracticeNote {
+public class ChoiceOrange {
 
 	public static void main(String[] args) {
-
 		int[] tangerine = { 1, 3, 2, 5, 4, 5, 2, 3 };
 
 		int answer = 0;
@@ -52,4 +53,5 @@ public class PracticeNote {
 		System.out.println("최소귤종류 갯수:" + answer);
 
 	}
+
 }
