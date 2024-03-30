@@ -17,7 +17,7 @@ public class ChoiceOrange {
 
 		int check = tangerine[0];
 		int count = 1;
-		int k = 4; // 귤의 개
+		int k = 4; // 귤의 개수 
 		ArrayList<Integer> numArr = new ArrayList<>();
 
 		for (int i = 1; i < tangerine.length; i++) {
