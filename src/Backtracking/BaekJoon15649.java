@@ -32,8 +32,8 @@ public class BaekJoon15649 {
 		
 		for(int i=0; i<N ; i ++) {
 				
-			if(!visited[i]) {
-				visited[i]=true;
+			if(!visited[i]) { //방문하지 않았으면 
+				visited[i]=true; //
 				selected[count]=i+1;
 				dfs(count+1,selected,visited);
 				visited[i]=false;
