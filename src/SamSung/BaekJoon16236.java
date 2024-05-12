@@ -8,7 +8,7 @@ import java.util.Queue;
 
 public class BaekJoon16236 {
 
-	static int[][] dirs = { { 1, 0 }, { 0, -1 }, { -1, 0 }, { 0, 1 } };
+	static int[][] dirs = { { -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 } };
 	static int[][] arr;
 	static int sum = 0; // 총 걸리는 시
 	static int jaws = 2; // 죠스 초반 크기.
@@ -23,6 +23,7 @@ public class BaekJoon16236 {
 		N = Integer.parseInt(br.readLine());
 
 		arr = new int[N][N];
+		
 		
 		for(int i=0; i<N; i++) {
 			
@@ -55,6 +56,7 @@ public class BaekJoon16236 {
 		}
 		
 		System.out.println(sum);
+		System.out.println("jaws:"+jaws);
 		
 	}
 
@@ -65,9 +67,10 @@ public class BaekJoon16236 {
 		Queue<int[]> queue = new LinkedList<>();
 
 		queue.offer(new int[] {y,x,0});
-		
+		arr[y][x] = 0;
 		
 		boolean[][] checkArr = new boolean[N][N];
+		checkArr[y][x]=true; 
 		
 		while (!queue.isEmpty()) {
 
@@ -78,34 +81,42 @@ public class BaekJoon16236 {
 			int curX = cur[1];
 			int curY = cur[0];
 			
-			System.out.println("X:"+curX+" Y:"+curY);
+			System.out.println("X:"+curX+" Y:"+curY+ " curTime:" + curTime);
 			
-			checkArr[curY][curX] = true;
+//			checkArr[curY][curX] = true;
 
-			for (int[] dir : dirs) {
+			for (int i= 0; i<4; i++) {
 
-				int newX = curX + dir[1];
-				int newY = curY + dir[0];
+				int newX = curX + dirs[i][1];
+				int newY = curY + dirs[i][0];
 
 				if (newY >= 0 && newX >= 0 && newY < N && newX < N && arr[newY][newX] <= jaws && checkArr[newY][newX]==false) {
 					
-					curTime++;
+					int newTime=curTime+1;
 					
 					
 					if(arr[newY][newX] != jaws && arr[newY][newX]!=0) {
+						System.out.println("먹은좌표: "+newX+","+newY+" 걸린시간:"+newTime	);
 						eatCount++;
 						arr[newY][newX]=0;
 						if(eatCount==jaws) {
-							checkArr = new boolean[N][N];
-							eatCount = 0;
+//							checkArr = new boolean[N][N];
+							System.out.println("before jaws eatCount:"+eatCount);							eatCount = 0;
 							jaws++;
 							
 						}
-						sum += curTime;
-						curTime=0;
+						sum += newTime;
+						newTime=0;
+						checkArr = new boolean[N][N];
+						queue.clear();
+						i=4;
 					}
 					
-					queue.offer(new int[] {newY,newX,curTime});
+					checkArr[newY][newX] = true;
+					queue.offer(new int[] {newY,newX,newTime});
+					
+			
+					
 					
 					
 					
